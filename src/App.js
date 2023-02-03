@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import MiApi from './components/MiApi';
+import { useState } from 'react';
 
 function App() {
+  const [busqueda, setBusqueda] = useState("")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App contenedor">
+      <Header className="header" filtrar={setBusqueda}></Header>
+      <MiApi busqueda={busqueda} ></MiApi>
     </div>
   );
 }
